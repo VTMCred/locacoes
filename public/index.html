@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VTMLoc. - Locação Simples, Rápida e Segura</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,900;1,900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    .font-nimbus-heavy {
+      font-family: 'Archivo', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: 900;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-[#F8F9FA] text-slate-800 min-h-screen flex flex-col font-sans antialiased selection:bg-blue-100 selection:text-blue-700">
+
+  <!-- ==================== HOME VIEW ==================== -->
+  <div id="home-view" class="min-h-screen flex flex-col">
+    <!-- Top Header Banner -->
+    <header class="bg-[#0A2ECC] text-white py-4 px-4 sm:px-8 border-b border-white/10 shadow-xs">
+      <div class="max-w-xl mx-auto text-center space-y-2">
+        <div class="text-3xl sm:text-4xl font-nimbus-heavy tracking-tight text-white">
+          VTMLoc<span class="text-white">.</span>
+        </div>
+        <p class="text-xs sm:text-sm font-semibold text-blue-100 tracking-wide">
+          Locação Simples, Rápida e Segura
+        </p>
+        <div class="flex items-center justify-center gap-2 pt-1">
+          <span class="bg-white/10 text-white/90 text-[10px] font-bold px-2.5 py-1 rounded-full border border-white/15">
+            Entrega & Retirada
+          </span>
+          <span class="bg-white/10 text-white/90 text-[10px] font-bold px-2.5 py-1 rounded-full border border-white/15">
+            Contrato Digital
+          </span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 flex flex-col items-center justify-between p-4 sm:p-6">
+      <div class="w-full max-w-xl space-y-4 my-auto">
+        
+        <!-- CARD 1: PS5 Slim -->
+        <div id="btn-open-ps5" class="bg-white rounded-[24px] p-5 border border-slate-100 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] hover:border-blue-300 hover:shadow-md transition-all cursor-pointer group active:scale-[0.99]">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3.5">
+              <div className="w-12 h-12 rounded-2xl bg-blue-50 text-[#0D3BFF] flex items-center justify-center shrink-0 group-hover:bg-[#0D3BFF] group-hover:text-white transition-colors">
+                <i data-lucide="gamepad-2" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h2 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#0D3BFF] transition-colors">
+                  PlayStation 5 Slim Digital
+                </h2>
+                <p class="text-xs text-slate-500 font-medium">
+                  Com 2 Controles DualSense
+                </p>
+              </div>
+            </div>
+            <div class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-blue-50 group-hover:text-[#0D3BFF] transition-colors">
+              <i data-lucide="chevron-right" class="w-5 h-5"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2: Bicicleta OGGI -->
+        <div id="btn-open-bike" class="bg-white rounded-[24px] p-5 border border-slate-100 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] hover:border-purple-300 hover:shadow-md transition-all cursor-pointer group active:scale-[0.99]">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3.5">
+              <div class="w-12 h-12 rounded-2xl bg-purple-50 text-[#8B5CF6] flex items-center justify-center shrink-0 group-hover:bg-[#8B5CF6] group-hover:text-white transition-colors">
+                <i data-lucide="bike" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h2 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#8B5CF6] transition-colors">
+                  Bicicleta
+                </h2>
+                <p class="text-xs text-slate-500 font-medium">
+                  OGGI Hacker Sport Aro 29
+                </p>
+              </div>
+            </div>
+            <div class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-purple-50 group-hover:text-[#8B5CF6] transition-colors">
+              <i data-lucide="chevron-right" class="w-5 h-5"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3: Termos de Uso -->
+        <div id="btn-open-terms" class="bg-white rounded-[24px] p-5 border border-slate-100 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] hover:border-slate-300 hover:shadow-md transition-all cursor-pointer group active:scale-[0.99]">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3.5">
+              <div class="w-12 h-12 rounded-2xl bg-slate-100 text-slate-700 flex items-center justify-center shrink-0 group-hover:bg-slate-800 group-hover:text-white transition-colors">
+                <i data-lucide="file-text" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h2 class="text-base sm:text-lg font-bold text-slate-900">
+                  Termos de Uso
+                </h2>
+                <p class="text-xs text-slate-500 font-medium">
+                  Regras e Contrato de Locação
+                </p>
+              </div>
+            </div>
+            <div class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-slate-200 group-hover:text-slate-800 transition-colors">
+              <i data-lucide="chevron-right" class="w-5 h-5"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 4: WhatsApp -->
+        <div id="btn-open-whatsapp" class="bg-white rounded-[24px] p-5 border border-slate-100 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] hover:border-emerald-300 hover:shadow-md transition-all cursor-pointer group active:scale-[0.99]">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3.5">
+              <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-[#25D366] flex items-center justify-center shrink-0 group-hover:bg-[#25D366] group-hover:text-white transition-colors">
+                <i data-lucide="message-circle" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h2 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#25D366] transition-colors">
+                  Atendimento WhatsApp
+                </h2>
+                <p class="text-xs text-slate-500 font-medium">
+                  Fale com a gente direto no WhatsApp
+                </p>
+              </div>
+            </div>
+            <div class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-emerald-50 group-hover:text-[#25D366] transition-colors">
+              <i data-lucide="chevron-right" class="w-5 h-5"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Links -->
+        <footer class="pt-6 pb-4 text-center space-y-3">
+          <div class="flex items-center justify-center gap-4 text-xs font-semibold text-slate-500">
+            <button id="footer-link-terms" class="hover:text-blue-600 transition-colors cursor-pointer">Termos de Uso</button>
+            <span>•</span>
+            <button id="footer-link-whatsapp" class="hover:text-emerald-600 transition-colors cursor-pointer">Suporte</button>
+          </div>
+          <p class="text-[11px] text-slate-400 font-medium">
+            © VTMLoc. Todos os direitos reservados.
+          </p>
+        </footer>
+
+      </div>
+    </main>
+  </div>
+
+
+  <!-- ==================== PS5 PAGE VIEW ==================== -->
+  <div id="ps5-view" class="hidden min-h-screen flex-col bg-[#F8F9FA]">
+    <!-- Navigation Top Bar -->
+    <div class="bg-[#0A2ECC] text-white py-3 px-4 sm:px-8 border-b border-white/10 flex items-center justify-between shadow-xs sticky top-0 z-40 backdrop-blur-xs">
+      <button id="btn-ps5-back" class="flex items-center gap-2 text-xs sm:text-sm font-bold bg-white/10 hover:bg-white/20 text-white px-3.5 py-1.5 rounded-xl transition-all cursor-pointer active:scale-95">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        <span>Voltar ao início</span>
+      </button>
+      <div class="text-sm font-nimbus-heavy text-white tracking-tight">
+        VTMLoc<span class="text-white">.</span>
+      </div>
+    </div>
+
+    <!-- Main Container -->
+    <main class="flex-1 w-full max-w-3xl mx-auto px-4 py-6 sm:py-8 space-y-6">
+      <!-- Banner Card -->
+      <div class="bg-gradient-to-r from-[#0D3BFF] to-[#0026C6] text-white rounded-[24px] p-6 sm:p-8 shadow-xl relative overflow-hidden">
+        <div class="absolute -right-8 -bottom-8 w-48 h-48 bg-white/5 rounded-full pointer-events-none blur-xl"></div>
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6 relative z-10">
+          <div class="space-y-2">
+            <div class="inline-flex items-center gap-1.5 bg-white/15 text-white text-[11px] font-bold px-3 py-1 rounded-full backdrop-blur-xs">
+              <i data-lucide="gamepad-2" class="w-3.5 h-3.5"></i>
+              <span>Console Premium</span>
+            </div>
+            <h1 class="text-2xl sm:text-3xl font-black text-white tracking-tight">
+              PlayStation 5 Slim Digital
+            </h1>
+            <p class="text-xs sm:text-sm text-blue-100 font-medium max-w-md">
+              Acompanha <strong class="text-white">2 Controles DualSense Originais</strong> + Todos os jogos do catálogo em mídia digital inclusos no console!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1. PLAN / PERIOD SELECTION -->
+      <section class="bg-white rounded-[24px] p-5 sm:p-6 border border-slate-100 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.04)] space-y-4">
+        <h2 class="text-base sm:text-lg font-bold text-slate-800 flex items-center gap-2">
+          <span class="w-6 h-6 rounded-lg bg-blue-100 text-[#0D3BFF] flex items-center justify-center text-xs font-black">1</span>
+          Escolha o Período de Locação
+        </h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <!-- Weekend -->
+          <div id="ps5-plan-weekend" class="ps5-plan-card p-4 rounded-2xl border border-[#0D3BFF] bg-blue-50/70 ring-2 ring-[#0D3BFF]/20 shadow-xs transition-all cursor-pointer relative flex flex-col justify-between">
+            <span class="absolute -top-2.5 right-3 bg-amber-500 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-xs">
+              Mais Escolhido
+            </span>
+            <div>
+              <div class="text-xs font-extrabold text-slate-800 uppercase tracking-wider">Fim de Semana</div>
+              <div class="text-xs text-slate-500 font-medium mt-1">Sexta à Segunda (3 Diárias)</div>
+            </div>
+            <div class="text-xl font-black text-[#0D3BFF] mt-4">R$ 125,00</div>
+          </div>
+
+          <!-- Week -->
+          <div id="ps5-plan-week" class="ps5-plan-card p-4 rounded-2xl border border-slate-200 hover:border-slate-300 bg-white transition-all cursor-pointer relative flex flex-col justify-between">
+            <div>
+              <div class="text-xs font-extrabold text-slate-800 uppercase tracking-wider">Semana</div>
+              <div class="text-xs text-slate-500 font-medium mt-1">2 Diárias</div>
+            </div>
+            <div class="text-xl font-black text-[#0D3BFF] mt-4">R$ 100,00</div>
+          </div>
+
+          <!-- Daily -->
+          <div id="ps5-plan-daily" class="ps5-plan-card p-4 rounded-2xl border border-slate-200 hover:border-slate-300 bg-white transition-all cursor-pointer relative flex flex-col justify-between">
+            <div>
+              <div class="text-xs font-extrabold text-slate-800 uppercase tracking-wider">Diária</div>
+              <div class="text-xs text-slate-500 font-medium mt-1">24 Horas (1 Diária)</div>
+            </div>
+            <div class="text-xl font-black text-[#0D3BFF] mt-4">R$ 65,00</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. DATE SELECTION -->
+      <section class="bg-white rounded-[24px] p-5 sm:p-6 border border-slate-100 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.04)] space-y-4">
+        <h2 class="text-base sm:text-lg font-bold text-slate-800 flex items-center gap-2">
+          <span class="w-6 h-6 rounded-lg bg-blue-100 text-[#0D3BFF] flex items-center justify-center text-xs font-black">2</span>
+          Agendamento de Recebimento
+        </h2>
+
+        <div class="bg-slate-50 border border-slate-200/80 rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="space-y-1 text-center sm:text-left">
+            <div class="text-xs text-slate-500 font-medium">Data de Recebimento / Retirada:</div>
+            <div class="text-sm sm:text-base font-bold text-slate-900 flex items-center justify-center sm:justify-start gap-2">
+              <i data-lucide="calendar" class="w-4 h-4 text-[#0D3BFF]"></i>
+              <span id="ps5-receipt-date-display">--/--/----</span>
+            </div>
+            <div class="text-xs text-blue-600 font-semibold pt-1">
+              Devolução prevista: <strong id="ps5-return-date-display">--/--/----</strong>
+            </div>
+          </div>
+
+          <button id="btn-open-ps5-datepicker" class="bg-[#0D3BFF] hover:bg-blue-700 text-white font-bold text-xs sm:text-sm px-5 py-3 rounded-xl transition-all shadow-xs flex items-center gap-2 shrink-0 cursor-pointer active:scale-95">
+            <i data-lucide="calendar" class="w-4 h-4"></i>
+            <span>Selecione o dia para receber</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- 3. GAME CATALOG BUTTON & CARD -->
+      <section class="bg-white rounded-[24px] p-5 sm:p-6 border border-slate-100 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.04)] space-y-4">
+        <div>
+          <h2 class="text-base sm:text-lg font-bold text-slate-800 flex items-center gap-2">
+            <span class="w-6 h-6 rounded-lg bg-blue-100 text-[#0D3BFF] flex items-center justify-center text-xs font-black">3</span>
+            Jogos Inclusos no PS5
+          </h2>
+          <p class="text-xs text-slate-500 mt-1">
+            Todos os jogos são em mídia digital e já ficam liberados no console para você baixar durante a sua locação.
+          </p>
+        </div>
+
+        <div class="bg-gradient-to-br from-blue-50 to-indigo-50/50 border border-blue-200/80 rounded-2xl p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div class="flex items-center gap-3.5">
+            <div class="w-10 h-10 rounded-xl bg-[#0D3BFF] text-white flex items-center justify-center shrink-0 shadow-xs">
+              <i data-lucide="download" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <div class="font-bold text-slate-900 text-sm sm:text-base">
+                Catálogo Completo em Mídia Digital
+              </div>
+            </div>
+          </div>
+
+          <button id="btn-open-games-modal" class="w-full sm:w-auto bg-[#0D3BFF] hover:bg-blue-700 text-white font-bold text-xs sm:text-sm px-5 py-3.5 rounded-xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 shrink-0 cursor-pointer active:scale-95">
+            <i data-lucide="sparkles" class="w-4 h-4 text-amber-300"></i>
+            <span>Confira os jogos inclusos</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Info Notice -->
+      <div class="bg-amber-50 border border-amber-200/80 rounded-2xl p-4 flex items-start gap-3 text-amber-900 text-xs">
+        <i data-lucide="info" class="w-4 h-4 text-amber-600 shrink-0 mt-0.5"></i>
+        <div class="leading-relaxed">
+          <strong>Reserva Direta no WhatsApp:</strong> Ao clicar no botão abaixo, suas informações de período e data serão enviadas diretamente para o nosso atendimento via WhatsApp.
+        </div>
+      </div>
+
+      <!-- Bottom WhatsApp Floating Box -->
+      <div class="bg-white rounded-[24px] p-5 sm:p-6 border border-slate-200/80 shadow-lg flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div>
+          <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">
+            Total do Período (<span id="ps5-summary-period-label">Fim de Semana</span>)
+          </div>
+          <div class="text-2xl sm:text-3xl font-black text-[#0D3BFF]" id="ps5-summary-price">
+            R$ 125,00
+          </div>
+        </div>
+
+        <button id="btn-ps5-whatsapp" class="w-full sm:w-auto bg-[#25D366] hover:bg-[#20bd5a] text-white py-3.5 px-6 rounded-2xl font-bold text-sm sm:text-base flex items-center justify-center gap-2.5 shadow-md hover:shadow-lg transition-all active:scale-95 cursor-pointer">
+          <i data-lucide="message-circle" class="w-5 h-5 fill-white text-transparent"></i>
+          <span>Reservar no WhatsApp</span>
+        </button>
+      </div>
+    </main>
+  </div>
+
+
+  <!-- ==================== MODALS ==================== -->
+
+  <!-- 1. GAMES CATALOG MODAL -->
+  <div id="modal-games-catalog" class="hidden fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/60 backdrop-blur-xs">
+    <div class="bg-white w-full max-w-2xl rounded-[24px] shadow-2xl border border-slate-100 overflow-hidden flex flex-col max-h-[90vh]">
+      <!-- Header -->
+      <div class="bg-[#0D3BFF] text-white p-5 sm:p-6 flex items-center justify-between shrink-0">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+            <i data-lucide="gamepad-2" class="w-5 h-5 text-white"></i>
+          </div>
+          <div>
+            <h3 class="text-lg sm:text-xl font-bold leading-tight">Jogos Inclusos no PS5</h3>
+            <p class="text-xs text-white/80 font-medium">
+              Todos os títulos em mídia digital disponíveis no console
+            </p>
+          </div>
+        </div>
+        <button id="btn-close-games-modal" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors cursor-pointer">
+          <i data-lucide="x" class="w-5 h-5 text-white"></i>
+        </button>
+      </div>
+
+      <!-- Body -->
+      <div class="p-4 sm:p-6 overflow-y-auto space-y-4">
+        <!-- Search bar -->
+        <div class="relative">
+          <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+          <input
+            id="games-search-input"
+            type="text"
+            placeholder="Buscar jogo por nome (ex: GTA, Resident Evil, Spider-Man)..."
+            class="w-full bg-slate-50 border border-slate-200 rounded-xl pl-10 pr-4 py-2.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#0D3BFF]/30 focus:border-[#0D3BFF] transition-all"
+          />
+        </div>
+
+        <!-- Catalog Accordion List -->
+        <div id="games-accordion-container" class="space-y-2 max-h-[380px] overflow-y-auto pr-1">
+          <!-- Populated dynamically via app.js -->
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="p-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between shrink-0">
+        <span class="text-xs text-slate-500 font-medium">
+          Catálogo de Jogos PS5
+        </span>
+        <button id="btn-footer-close-games-modal" class="bg-[#0D3BFF] hover:bg-blue-700 text-white text-xs font-bold px-6 py-2.5 rounded-xl transition-all cursor-pointer">
+          Fechar
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 2. BIKES MODAL -->
+  <div id="modal-bikes" class="hidden fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/60 backdrop-blur-xs">
+    <div class="bg-white w-full max-w-lg rounded-[24px] shadow-2xl border border-slate-100 overflow-hidden flex flex-col max-h-[90vh]">
+      <!-- Header -->
+      <div class="bg-[#8B5CF6] text-white p-5 sm:p-6 flex items-center justify-between relative shrink-0">
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center">
+            <i data-lucide="bike" class="w-6 h-6 text-white"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold leading-tight">Alugar Bicicleta</h3>
+            <p class="text-xs text-white/80 font-medium">OGGI Hacker Sport Aro 29</p>
+          </div>
+        </div>
+        <button id="btn-close-bikes-modal" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors cursor-pointer">
+          <i data-lucide="x" class="w-5 h-5 text-white"></i>
+        </button>
+      </div>
+
+      <!-- Body -->
+      <div class="p-5 sm:p-6 overflow-y-auto space-y-5 text-slate-800">
+        <!-- Bike Info Card -->
+        <div class="bg-purple-50/70 border border-purple-200/80 rounded-2xl p-4 flex items-center justify-between gap-3">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-[#8B5CF6] text-white flex items-center justify-center shrink-0">
+              <i data-lucide="bike" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <div class="text-xs font-bold text-purple-900 uppercase tracking-wider">
+                Bicicleta Disponível
+              </div>
+              <div class="text-sm font-extrabold text-slate-900">
+                OGGI Hacker Sport Aro 29
+              </div>
+            </div>
+          </div>
+          <span class="text-[10px] font-bold text-purple-700 bg-purple-100 px-2.5 py-1 rounded-full shrink-0">
+            Disponível
+          </span>
+        </div>
+
+        <!-- 1. Period Selection -->
+        <div>
+          <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2.5">
+            1. Escolha o Período de Locação
+          </label>
+          <div class="grid grid-cols-2 gap-2.5">
+            <div id="bike-plan-daily" class="bike-plan-card p-3.5 rounded-2xl border border-[#8B5CF6] bg-purple-50/70 ring-2 ring-[#8B5CF6]/20 shadow-xs transition-all cursor-pointer relative flex flex-col justify-between">
+              <div>
+                <div class="text-xs font-extrabold text-slate-800 uppercase tracking-wider">Diária</div>
+                <div class="text-[11px] text-slate-500 font-medium mt-0.5">24 Horas (1 Diária)</div>
+              </div>
+              <div class="text-lg font-black text-[#8B5CF6] mt-3">R$ 80,00</div>
+            </div>
+
+            <div id="bike-plan-weekend" class="bike-plan-card p-3.5 rounded-2xl border border-slate-200 hover:border-slate-300 bg-white transition-all cursor-pointer relative flex flex-col justify-between">
+              <span class="absolute -top-2 right-2 bg-amber-500 text-white text-[9px] font-bold px-2 py-0.5 rounded-full shadow-xs">
+                Mais Escolhido
+              </span>
+              <div>
+                <div class="text-xs font-extrabold text-slate-800 uppercase tracking-wider">Fim de Semana</div>
+                <div class="text-[11px] text-slate-500 font-medium mt-0.5">Sexta à Domingo (3 Diárias)</div>
+              </div>
+              <div class="text-lg font-black text-[#8B5CF6] mt-3">R$ 190,00</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Date Selection -->
+        <div>
+          <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2.5">
+            2. Agendamento de Recebimento
+          </label>
+          <div class="bg-slate-50 border border-slate-200/80 rounded-2xl p-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <div class="space-y-1 text-center sm:text-left">
+              <div class="text-xs text-slate-500 font-medium">Data de Recebimento:</div>
+              <div class="text-xs sm:text-sm font-bold text-slate-900 flex items-center justify-center sm:justify-start gap-1.5">
+                <i data-lucide="calendar" class="w-4 h-4 text-[#8B5CF6]"></i>
+                <span id="bike-receipt-date-display">--/--/----</span>
+              </div>
+              <div class="text-[11px] text-purple-700 font-semibold pt-0.5">
+                Devolução: <strong id="bike-return-date-display">--/--/----</strong>
+              </div>
+            </div>
+
+            <button id="btn-open-bike-datepicker" class="w-full sm:w-auto bg-[#8B5CF6] hover:bg-purple-700 text-white font-bold text-xs px-4 py-2.5 rounded-xl transition-all shadow-xs flex items-center justify-center gap-2 shrink-0 cursor-pointer active:scale-95">
+              <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
+              <span>Selecionar Data</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 3. Equipments & Accessories Options -->
+        <div>
+          <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2.5">
+            3. Equipamentos Opcionais
+          </label>
+          <div class="space-y-2">
+            <label class="flex items-center justify-between p-3.5 rounded-xl border border-slate-200/90 hover:bg-slate-50 transition-colors cursor-pointer">
+              <div class="flex items-center gap-3">
+                <input id="chk-helmet" type="checkbox" class="w-4 h-4 rounded text-[#8B5CF6] focus:ring-purple-400 cursor-pointer" />
+                <span class="text-xs font-semibold text-slate-800">Capacete com Óculos</span>
+              </div>
+              <span class="text-xs font-bold text-[#8B5CF6] bg-purple-50 px-2 py-0.5 rounded-md">+R$ 10,00</span>
+            </label>
+
+            <label class="flex items-center justify-between p-3.5 rounded-xl border border-slate-200/90 hover:bg-slate-50 transition-colors cursor-pointer">
+              <div class="flex items-center gap-3">
+                <input id="chk-bag" type="checkbox" class="w-4 h-4 rounded text-[#8B5CF6] focus:ring-purple-400 cursor-pointer" />
+                <span class="text-xs font-semibold text-slate-800">Bolsa com Kit Remendo de Pneu</span>
+              </div>
+              <span class="text-xs font-bold text-[#8B5CF6] bg-purple-50 px-2 py-0.5 rounded-md">+R$ 5,00</span>
+            </label>
+
+            <label class="flex items-center justify-between p-3.5 rounded-xl border border-slate-200/90 hover:bg-slate-50 transition-colors cursor-pointer">
+              <div class="flex items-center gap-3">
+                <input id="chk-lights" type="checkbox" class="w-4 h-4 rounded text-[#8B5CF6] focus:ring-purple-400 cursor-pointer" />
+                <span class="text-xs font-semibold text-slate-800">Luzes Dianteira e Traseira</span>
+              </div>
+              <span class="text-xs font-bold text-[#8B5CF6] bg-purple-50 px-2 py-0.5 rounded-md">+R$ 5,00</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Safety Badge -->
+        <div class="bg-purple-50 border border-purple-200/80 rounded-xl p-3 flex items-start gap-2.5 text-purple-900 text-xs">
+          <i data-lucide="shield-check" class="w-4 h-4 text-purple-600 shrink-0 mt-0.5"></i>
+          <div>
+            <strong>Revisão Garantida:</strong> A bicicleta passa por regulagem de freios e calibragem dos pneus antes de cada entrega.
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Actions -->
+      <div class="p-4 sm:p-5 bg-slate-50 border-t border-slate-100 flex items-center justify-between gap-4 shrink-0">
+        <div>
+          <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Total do Período</div>
+          <div id="bike-summary-price" class="text-xl sm:text-2xl font-black text-[#8B5CF6]">R$ 80,00</div>
+        </div>
+
+        <button id="btn-bike-whatsapp" class="flex-1 max-w-[240px] bg-[#25D366] hover:bg-[#20bd5a] text-white py-3.5 px-4 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all active:scale-[0.98] cursor-pointer">
+          <i data-lucide="message-circle" class="w-4 h-4 fill-white text-transparent"></i>
+          <span>Reservar no WhatsApp</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 3. DATE PICKER MODAL -->
+  <div id="modal-datepicker" class="hidden fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/60 backdrop-blur-xs">
+    <div class="bg-white w-full max-w-md rounded-[24px] shadow-2xl border border-slate-100 overflow-hidden flex flex-col">
+      <!-- Header -->
+      <div class="bg-[#0D3BFF] text-white p-5 flex items-center justify-between shrink-0">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center">
+            <i data-lucide="calendar" class="w-5 h-5 text-white"></i>
+          </div>
+          <div>
+            <h3 class="text-base sm:text-lg font-bold leading-tight">Selecione a Data de Recebimento</h3>
+            <p class="text-xs text-white/80 font-medium">Escolha o dia ideal para receber o item</p>
+          </div>
+        </div>
+        <button id="btn-close-datepicker-modal" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors cursor-pointer">
+          <i data-lucide="x" class="w-5 h-5 text-white"></i>
+        </button>
+      </div>
+
+      <!-- Calendar Body -->
+      <div class="p-5 space-y-4">
+        <!-- Month Navigation -->
+        <div class="flex items-center justify-between text-slate-800 font-bold text-sm bg-slate-50 p-2.5 rounded-xl border border-slate-200/80">
+          <button id="btn-prev-month" class="p-1 rounded-lg hover:bg-slate-200/80 text-slate-600 transition-colors cursor-pointer">
+            <i data-lucide="chevron-left" class="w-5 h-5"></i>
+          </button>
+          <span id="calendar-month-year-label">Mês Ano</span>
+          <button id="btn-next-month" class="p-1 rounded-lg hover:bg-slate-200/80 text-slate-600 transition-colors cursor-pointer">
+            <i data-lucide="chevron-right" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+        <!-- Weekdays Grid Header -->
+        <div class="grid grid-cols-7 gap-1 text-center text-xs font-bold text-slate-400">
+          <div>Dom</div>
+          <div>Seg</div>
+          <div>Ter</div>
+          <div>Qua</div>
+          <div>Qui</div>
+          <div>Sex</div>
+          <div>Sáb</div>
+        </div>
+
+        <!-- Calendar Days Grid -->
+        <div id="calendar-days-grid" class="grid grid-cols-7 gap-1 text-xs">
+          <!-- Rendered dynamically -->
+        </div>
+
+        <!-- Summary Preview Box -->
+        <div class="bg-blue-50 border border-blue-200/80 rounded-xl p-3 text-xs text-blue-950 space-y-1">
+          <div class="flex justify-between font-medium">
+            <span class="text-slate-600">Recebimento:</span>
+            <strong id="dp-preview-receipt" class="text-slate-900">--/--/----</strong>
+          </div>
+          <div class="flex justify-between font-medium">
+            <span class="text-slate-600">Devolução Prevista:</span>
+            <strong id="dp-preview-return" class="text-[#0D3BFF]">--/--/----</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="p-4 bg-slate-50 border-t border-slate-100 flex items-center justify-end gap-2">
+        <button id="btn-cancel-datepicker" class="px-4 py-2 text-xs font-bold text-slate-600 hover:text-slate-800 transition-colors cursor-pointer">
+          Cancelar
+        </button>
+        <button id="btn-confirm-datepicker" class="bg-[#0D3BFF] hover:bg-blue-700 text-white text-xs font-bold px-5 py-2.5 rounded-xl transition-all cursor-pointer">
+          Confirmar Data
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 4. TERMS MODAL -->
+  <div id="modal-terms" class="hidden fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/60 backdrop-blur-xs">
+    <div class="bg-white w-full max-w-lg rounded-[24px] shadow-2xl border border-slate-100 overflow-hidden flex flex-col max-h-[90vh]">
+      <!-- Header -->
+      <div class="bg-slate-900 text-white p-5 sm:p-6 flex items-center justify-between shrink-0">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center">
+            <i data-lucide="file-text" class="w-5 h-5 text-white"></i>
+          </div>
+          <div>
+            <h3 class="text-lg sm:text-xl font-bold leading-tight">Termos de Uso e Locação</h3>
+            <p class="text-xs text-white/80 font-medium">Regras de Contrato VTMLoc.</p>
+          </div>
+        </div>
+        <button id="btn-close-terms-modal" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors cursor-pointer">
+          <i data-lucide="x" class="w-5 h-5 text-white"></i>
+        </button>
+      </div>
+
+      <!-- Body -->
+      <div class="p-5 sm:p-6 overflow-y-auto space-y-4 text-xs text-slate-700 leading-relaxed">
+        <div class="space-y-2">
+          <h4 class="font-bold text-slate-900 text-sm flex items-center gap-2">
+            <span class="w-5 h-5 rounded-md bg-blue-100 text-[#0D3BFF] flex items-center justify-center text-[10px] font-black">1</span>
+            Requisitos para Locação
+          </h4>
+          <p>
+            É necessário apresentar documento oficial com foto (RG ou CNH) válido e comprovante de residência atualizado no nome do locatário.
+          </p>
+        </div>
+
+        <div class="space-y-2">
+          <h4 class="font-bold text-slate-900 text-sm flex items-center gap-2">
+            <span class="w-5 h-5 rounded-md bg-blue-100 text-[#0D3BFF] flex items-center justify-center text-[10px] font-black">2</span>
+            Uso e Conservação
+          </h4>
+          <p>
+            O locatário se compromete a zelar pelo perfeito estado de conservação do equipamento (console, controles, bicicletas e acessórios). Danos físicos, quebras ou mau uso serão cobrados separadamente conforme contrato.
+          </p>
+        </div>
+
+        <div class="space-y-2">
+          <h4 class="font-bold text-slate-900 text-sm flex items-center gap-2">
+            <span class="w-5 h-5 rounded-md bg-blue-100 text-[#0D3BFF] flex items-center justify-center text-[10px] font-black">3</span>
+            Devolução no Prazo
+          </h4>
+          <p>
+            O horário e data estipulados no agendamento deverão ser respeitados. Atrasos sem prévio aviso poderão incorrer em cobrança de nova diária.
+          </p>
+        </div>
+
+        <div class="space-y-2">
+          <h4 class="font-bold text-slate-900 text-sm flex items-center gap-2">
+            <span class="w-5 h-5 rounded-md bg-blue-100 text-[#0D3BFF] flex items-center justify-center text-[10px] font-black">4</span>
+            Jogos em Mídia Digital
+          </h4>
+          <p>
+            Os jogos no PS5 são disponibilizados em formato digital. É proibido alterar contas, senhas ou configurações de segurança do console.
+          </p>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="p-4 bg-slate-50 border-t border-slate-100 flex items-center justify-end shrink-0">
+        <button id="btn-footer-close-terms" class="bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold px-6 py-2.5 rounded-xl transition-all cursor-pointer">
+          Entendi
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 5. WHATSAPP MODAL -->
+  <div id="modal-whatsapp" class="hidden fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/60 backdrop-blur-xs">
+    <div class="bg-white w-full max-w-md rounded-[24px] shadow-2xl border border-slate-100 overflow-hidden flex flex-col">
+      <!-- Header -->
+      <div class="bg-[#25D366] text-white p-5 sm:p-6 flex items-center justify-between shrink-0">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center">
+            <i data-lucide="message-circle" class="w-6 h-6 text-white fill-white text-transparent"></i>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold leading-tight">Atendimento WhatsApp</h3>
+            <p class="text-xs text-white/90 font-medium">VTMLoc. Suporte e Reservas</p>
+          </div>
+        </div>
+        <button id="btn-close-whatsapp-modal" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors cursor-pointer">
+          <i data-lucide="x" class="w-5 h-5 text-white"></i>
+        </button>
+      </div>
+
+      <!-- Body -->
+      <div class="p-5 space-y-4 text-xs text-slate-700">
+        <div class="bg-emerald-50 border border-emerald-200/80 rounded-2xl p-4 space-y-2">
+          <div class="font-bold text-slate-900 text-sm flex items-center gap-2">
+            <span>Conversar pelo WhatsApp</span>
+          </div>
+          <p class="text-slate-600 leading-relaxed">
+            Tire suas dúvidas, faça orçamentos ou confirme disponibilidades diretamente com a nossa equipe.
+          </p>
+        </div>
+
+        <div class="space-y-2 font-medium">
+          <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-200/80">
+            <span class="text-slate-500">Número:</span>
+            <strong class="text-slate-900">(93) 99658-9790</strong>
+          </div>
+          <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-200/80">
+            <span class="text-slate-500">Atendimento:</span>
+            <strong class="text-slate-900">Segunda a Domingo</strong>
+          </div>
+        </div>
+
+        <a
+          href="https://wa.me/5593996589790?text=Ol%C3%A1,%20VTMLoc.!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20loca%C3%A7%C3%A3o."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-full bg-[#25D366] hover:bg-[#20bd5a] text-white py-3.5 px-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-md transition-all active:scale-95 cursor-pointer block text-center"
+        >
+          <i data-lucide="message-circle" class="w-4 h-4 fill-white text-transparent inline"></i>
+          <span>Abrir conversa no WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Load JS -->
+  <script src="/games-data.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
