@@ -38,7 +38,7 @@
 
   const BIKE_PRICES = {
     daily: 60,
-    weekend: 190
+    weekend: 150
   };
   const BIKE_DAYS = {
     daily: 1,
