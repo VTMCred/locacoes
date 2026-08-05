@@ -4,26 +4,690 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VTMLoc. - Locação Simples, Rápida e Segura</title>
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,900;1,900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              'nimbus-heavy': ['Archivo', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+              'ff-identification': ['Space Grotesk', 'Plus Jakarta Sans', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+
     <style>
       body {
         font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       }
       .font-nimbus-heavy {
-        font-family: 'Nimbus Sans Novus Heavy', 'Nimbus Sans', 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+        font-family: 'Archivo', -apple-system, BlinkMacSystemFont, sans-serif;
         font-weight: 900;
       }
       .font-ff-identification {
-        font-family: 'FF Identification Std Five C Regular', 'FF Identification', 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+        font-family: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
         font-weight: 500;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      @keyframes slideUp {
+        from { opacity: 0; transform: translateY(12px) scale(0.98); }
+        to { opacity: 1; transform: translateY(0) scale(1); }
+      }
+      .animate-fadeIn {
+        animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+      .animate-slideUp {
+        animation: slideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       }
     </style>
   </head>
-  <body class="bg-[#F8F9FA] text-slate-800 antialiased selection:bg-blue-100 selection:text-blue-700">
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+  <body class="bg-[#F8F9FA] text-slate-800 antialiased selection:bg-blue-100 selection:text-blue-700 min-h-screen">
+
+    <!-- ==================== HOME VIEW ==================== -->
+    <div id="home-view" class="min-h-screen flex flex-col">
+      <!-- Top Header Banner -->
+      <header class="w-full bg-[#0D3BFF] h-[170px] flex flex-col items-center justify-center text-center px-4 shadow-md relative overflow-hidden select-none">
+        <div class="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent pointer-events-none"></div>
+        
+        <div class="relative z-10 flex flex-col items-center justify-center">
+          <h1 class="text-[38px] sm:text-[44px] font-nimbus-heavy text-white tracking-tight leading-none">
+            VTMLoc<span class="text-white">.</span>
+          </h1>
+          
+          <p class="text-[11px] sm:text-[12px] font-medium text-white tracking-[0.2em] sm:tracking-[0.22em] uppercase mt-2.5 opacity-95">
+            LOCAÇÃO SIMPLES, RÁPIDA E SEGURA
+          </p>
+        </div>
+      </header>
+
+      <!-- Main Content Container -->
+      <main class="flex-1 flex flex-col items-center justify-between w-full max-w-[520px] mx-auto px-4 pt-8 sm:pt-10 pb-6">
+        <div class="w-full">
+          <!-- Section Header -->
+          <div class="text-center mb-6 sm:mb-8">
+            <h2 class="text-[20px] sm:text-[22px] font-bold text-slate-700 tracking-tight">
+              Escolha o que deseja alugar
+            </h2>
+            <p class="text-sm sm:text-[15px] text-slate-500 font-normal mt-1">
+              Encontre itens disponíveis de forma rápida.
+            </p>
+          </div>
+
+          <!-- Cards Container -->
+          <div class="space-y-4">
+            <!-- CARD 1: PS5 Slim -->
+            <button
+              id="btn-open-ps5"
+              class="w-full bg-white rounded-[20px] p-4 sm:p-5 border border-slate-100 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_25px_-2px_rgba(13,59,255,0.08)] hover:border-blue-100/80 transition-all duration-200 flex items-center justify-between gap-4 group cursor-pointer text-left active:scale-[0.99]"
+              aria-label="Alugar PlayStation 5 Slim Digital"
+            >
+              <div class="flex items-center gap-4 min-w-0">
+                <div class="w-[52px] h-[52px] sm:w-[56px] sm:h-[56px] rounded-[16px] bg-[#EFF4FF] text-[#0D3BFF] flex items-center justify-center shrink-0 group-hover:bg-[#0D3BFF] group-hover:text-white transition-colors duration-200">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 sm:w-7 sm:h-7"><line x1="6" x2="10" y1="12" y2="12"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="15" x2="15.01" y1="13" y2="13"/><line x1="18" x2="18.01" y1="11" y2="11"/><rect width="20" height="12" x="2" y="6" rx="6"/></svg>
+                </div>
+                <div class="min-w-0">
+                  <h3 class="text-[16px] sm:text-[17px] font-bold text-slate-900 group-hover:text-[#0D3BFF] transition-colors leading-snug">
+                    PlayStation 5 Slim Digital
+                  </h3>
+                  <p class="text-xs sm:text-[13.5px] text-slate-500 mt-0.5 truncate font-normal">
+                    Com 2 Controles DualSense
+                  </p>
+                </div>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 sm:w-5 sm:h-5 text-slate-300 group-hover:text-[#0D3BFF] group-hover:translate-x-0.5 transition-all shrink-0"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+
+            <!-- CARD 2: Bicicleta OGGI -->
+            <button
+              id="btn-open-bike"
+              class="w-full bg-white rounded-[20px] p-4 sm:p-5 border border-slate-100 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_25px_-2px_rgba(139,92,246,0.08)] hover:border-purple-100/80 transition-all duration-200 flex items-center justify-between gap-4 group cursor-pointer text-left active:scale-[0.99]"
+              aria-label="Alugar Bicicleta"
+            >
+              <div class="flex items-center gap-4 min-w-0">
+                <div class="w-[52px] h-[52px] sm:w-[56px] sm:h-[56px] rounded-[16px] bg-[#F5EFFF] text-[#8B5CF6] flex items-center justify-center shrink-0 group-hover:bg-[#8B5CF6] group-hover:text-white transition-colors duration-200">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 sm:w-7 sm:h-7"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg>
+                </div>
+                <div class="min-w-0">
+                  <h3 class="text-[16px] sm:text-[17px] font-bold text-slate-900 group-hover:text-[#8B5CF6] transition-colors leading-snug">
+                    Bicicleta
+                  </h3>
+                  <p class="text-xs sm:text-[13.5px] text-slate-500 mt-0.5 truncate font-normal">
+                    OGGI Hacker Sport Aro 29
+                  </p>
+                </div>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 sm:w-5 sm:h-5 text-slate-300 group-hover:text-[#8B5CF6] group-hover:translate-x-0.5 transition-all shrink-0"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+
+            <!-- CARD 3: Termos de Uso -->
+            <button
+              id="btn-open-terms"
+              class="w-full bg-white rounded-[20px] p-4 sm:p-5 border border-slate-100 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.04)] hover:shadow-md hover:border-slate-300 transition-all duration-200 flex items-center justify-between gap-4 group cursor-pointer text-left active:scale-[0.99]"
+              aria-label="Ver Termos de Uso"
+            >
+              <div class="flex items-center gap-4 min-w-0">
+                <div class="w-[52px] h-[52px] sm:w-[56px] sm:h-[56px] rounded-[16px] bg-slate-100 text-slate-700 flex items-center justify-center shrink-0 group-hover:bg-slate-800 group-hover:text-white transition-colors duration-200">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 sm:w-7 sm:h-7"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+                </div>
+                <div class="min-w-0">
+                  <h3 class="text-[16px] sm:text-[17px] font-bold text-slate-900 group-hover:text-slate-800 transition-colors leading-snug">
+                    Termos de Uso
+                  </h3>
+                  <p class="text-xs sm:text-[13.5px] text-slate-500 mt-0.5 truncate font-normal">
+                    Regras e Contrato de Locação
+                  </p>
+                </div>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 sm:w-5 sm:h-5 text-slate-300 group-hover:text-slate-800 group-hover:translate-x-0.5 transition-all shrink-0"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+
+            <!-- CARD 4: Atendimento WhatsApp -->
+            <button
+              id="btn-open-whatsapp"
+              class="w-full bg-white rounded-[20px] p-4 sm:p-5 border border-slate-100 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_25px_-2px_rgba(37,211,102,0.12)] hover:border-emerald-200 transition-all duration-200 flex items-center justify-between gap-4 group cursor-pointer text-left active:scale-[0.99]"
+              aria-label="Atendimento WhatsApp"
+            >
+              <div class="flex items-center gap-4 min-w-0">
+                <div class="w-[52px] h-[52px] sm:w-[56px] sm:h-[56px] rounded-[16px] bg-emerald-50 text-[#25D366] flex items-center justify-center shrink-0 group-hover:bg-[#25D366] group-hover:text-white transition-colors duration-200">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 sm:w-7 sm:h-7"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+                </div>
+                <div class="min-w-0">
+                  <h3 class="text-[16px] sm:text-[17px] font-bold text-slate-900 group-hover:text-[#25D366] transition-colors leading-snug">
+                    Atendimento WhatsApp
+                  </h3>
+                  <p class="text-xs sm:text-[13.5px] text-slate-500 mt-0.5 truncate font-normal">
+                    Fale com a gente direto no WhatsApp
+                  </p>
+                </div>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 sm:w-5 sm:h-5 text-slate-300 group-hover:text-[#25D366] group-hover:translate-x-0.5 transition-all shrink-0"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Footer Links -->
+        <footer class="w-full max-w-[520px] mx-auto px-4 mt-8 sm:mt-10 mb-4 text-center flex flex-col items-center">
+          <div class="flex items-center justify-center gap-4 text-xs font-semibold text-slate-500">
+            <button id="footer-link-terms" class="hover:text-blue-600 transition-colors cursor-pointer">Termos de Uso</button>
+            <span>•</span>
+            <button id="footer-link-whatsapp" class="hover:text-emerald-600 transition-colors cursor-pointer">Suporte</button>
+          </div>
+          <div class="mt-4 text-[11px] font-bold tracking-widest text-slate-400 uppercase select-none">
+            VTMLoc. © 2026
+          </div>
+        </footer>
+      </main>
+    </div>
+
+
+    <!-- ==================== PS5 PAGE VIEW ==================== -->
+    <div id="ps5-view" class="hidden min-h-screen flex-col bg-[#F8F9FA]">
+      <!-- Navigation Top Bar -->
+      <div class="bg-[#0A2ECC] text-white py-3 px-4 sm:px-8 border-b border-white/10 flex items-center justify-between shadow-xs sticky top-0 z-40 backdrop-blur-xs">
+        <button id="btn-ps5-back" class="flex items-center gap-2 text-xs sm:text-sm font-bold bg-white/10 hover:bg-white/20 text-white px-3.5 py-1.5 rounded-xl transition-all cursor-pointer active:scale-95">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+          <span>Voltar ao início</span>
+        </button>
+        <div class="text-sm font-nimbus-heavy text-white tracking-tight">
+          VTMLoc<span class="text-white">.</span>
+        </div>
+      </div>
+
+      <!-- Main Container -->
+      <main class="flex-1 w-full max-w-3xl mx-auto px-4 py-6 sm:py-8 space-y-6">
+        <!-- Banner Card -->
+        <div class="bg-gradient-to-r from-[#0D3BFF] to-[#0026C6] text-white rounded-[24px] p-6 sm:p-8 shadow-xl relative overflow-hidden">
+          <div class="absolute -right-8 -bottom-8 w-48 h-48 bg-white/5 rounded-full pointer-events-none blur-xl"></div>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6 relative z-10">
+            <div class="space-y-2">
+              <div class="inline-flex items-center gap-1.5 bg-white/15 text-white text-[11px] font-bold px-3 py-1 rounded-full backdrop-blur-xs">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                Disponível para Locação
+              </div>
+              <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight">
+                PlayStation 5 Slim Digital
+              </h1>
+              <p class="text-xs sm:text-sm text-blue-100/90 font-medium">
+                Alugue o console de última geração com entrega agilizada e 2 controles originais.
+              </p>
+            </div>
+            <button
+              id="btn-open-games-modal"
+              class="inline-flex items-center justify-center gap-2 bg-white text-[#0D3BFF] hover:bg-blue-50 font-bold px-5 py-3 rounded-2xl shadow-md transition-all cursor-pointer text-xs sm:text-sm shrink-0 active:scale-95"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><line x1="6" x2="10" y1="12" y2="12"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="15" x2="15.01" y1="13" y2="13"/><line x1="18" x2="18.01" y1="11" y2="11"/><rect width="20" height="12" x="2" y="6" rx="6"/></svg>
+              <span>Ver Catálogo de Jogos</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Section: Select Plan -->
+        <div class="bg-white rounded-[24px] p-5 sm:p-7 border border-slate-100 shadow-sm space-y-4">
+          <h2 class="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-[#0D3BFF]"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+            <span>Selecione o Plano de Locação</span>
+          </h2>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+            <!-- Plan 1: Fim de Semana (Default) -->
+            <div
+              id="ps5-plan-weekend"
+              class="ps5-plan-card p-4 rounded-2xl border border-[#0D3BFF] bg-blue-50/70 ring-2 ring-[#0D3BFF]/20 shadow-xs transition-all cursor-pointer relative flex flex-col justify-between"
+            >
+              <div class="absolute -top-2.5 right-3 bg-[#0D3BFF] text-white text-[9px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">
+                Mais Popular
+              </div>
+              <div>
+                <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Fim de Semana</span>
+                <div class="mt-1 flex items-baseline gap-1">
+                  <span class="text-2xl font-black text-slate-900">R$ 125</span>
+                  <span class="text-xs text-slate-500 font-medium">/ 3 dias</span>
+                </div>
+                <p class="text-[11px] text-slate-500 mt-1 font-medium">
+                  Sexta a Segunda
+                </p>
+              </div>
+            </div>
+
+            <!-- Plan 2: Semana -->
+            <div
+              id="ps5-plan-week"
+              class="ps5-plan-card p-4 rounded-2xl border border-slate-200 hover:border-slate-300 bg-white transition-all cursor-pointer relative flex flex-col justify-between"
+            >
+              <div>
+                <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Semana Completa</span>
+                <div class="mt-1 flex items-baseline gap-1">
+                  <span class="text-2xl font-black text-slate-900">R$ 100</span>
+                  <span class="text-xs text-slate-500 font-medium">/ 2 dias</span>
+                </div>
+                <p class="text-[11px] text-slate-500 mt-1 font-medium">
+                  Segunda a Quarta
+                </p>
+              </div>
+            </div>
+
+            <!-- Plan 3: Diária -->
+            <div
+              id="ps5-plan-daily"
+              class="ps5-plan-card p-4 rounded-2xl border border-slate-200 hover:border-slate-300 bg-white transition-all cursor-pointer relative flex flex-col justify-between"
+            >
+              <div>
+                <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Diária Individual</span>
+                <div class="mt-1 flex items-baseline gap-1">
+                  <span class="text-2xl font-black text-slate-900">R$ 65</span>
+                  <span class="text-xs text-slate-500 font-medium">/ dia</span>
+                </div>
+                <p class="text-[11px] text-slate-500 mt-1 font-medium">
+                  24 horas de uso
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section: Dates & Rental Info -->
+        <div class="bg-white rounded-[24px] p-5 sm:p-7 border border-slate-100 shadow-sm space-y-4">
+          <h2 class="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-[#0D3BFF]"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>Período e Datas</span>
+          </h2>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- Receipt Date Button -->
+            <div class="space-y-1.5">
+              <label class="text-xs font-bold text-slate-700 uppercase tracking-wider">Data de Recebimento</label>
+              <button
+                id="btn-open-ps5-datepicker"
+                class="w-full flex items-center justify-between p-3.5 rounded-xl border border-slate-200 hover:border-blue-400 bg-slate-50/50 hover:bg-blue-50/30 transition-all cursor-pointer text-left"
+              >
+                <div class="flex items-center gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-[#0D3BFF]"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                  <div>
+                    <span id="ps5-receipt-date-display" class="block font-bold text-slate-900 text-sm">--/--/----</span>
+                    <span class="text-[10px] text-slate-400 font-medium">Clique para alterar</span>
+                  </div>
+                </div>
+                <span class="text-xs font-bold text-[#0D3BFF] underline">Alterar</span>
+              </button>
+            </div>
+
+            <!-- Return Date Display (Calculated) -->
+            <div class="space-y-1.5">
+              <label class="text-xs font-bold text-slate-700 uppercase tracking-wider">Data Estimada de Devolução</label>
+              <div class="w-full flex items-center gap-3 p-3.5 rounded-xl border border-slate-200 bg-slate-100/60">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-emerald-600"><polyline points="20 6 9 17 4 12"/></svg>
+                <div>
+                  <span id="ps5-return-date-display" class="block font-bold text-slate-800 text-sm">--/--/----</span>
+                  <span class="text-[10px] text-slate-500 font-medium">Calculado automaticamente</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section: Included Items -->
+        <div class="bg-white rounded-[24px] p-5 sm:p-7 border border-slate-100 shadow-sm space-y-4">
+          <h2 class="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-[#0D3BFF]"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+            <span>O que está incluso no kit</span>
+          </h2>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm font-semibold text-slate-700">
+            <div class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-100">
+              <span class="w-2 h-2 rounded-full bg-[#0D3BFF]"></span>
+              Console PlayStation 5 Slim Digital 1TB
+            </div>
+            <div class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-100">
+              <span class="w-2 h-2 rounded-full bg-[#0D3BFF]"></span>
+              2 Controles Sem Fio DualSense
+            </div>
+            <div class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-100">
+              <span class="w-2 h-2 rounded-full bg-[#0D3BFF]"></span>
+              Cabo HDMI 2.1 Ultra High Speed
+            </div>
+            <div class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-100">
+              <span class="w-2 h-2 rounded-full bg-[#0D3BFF]"></span>
+              Cabos de Alimentação e Carregamento USB-C
+            </div>
+            <div class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-100 sm:col-span-2">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              Acesso Completo aos Jogos Digitais Instalados
+            </div>
+          </div>
+        </div>
+
+        <!-- Section: Checkout Action Banner -->
+        <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-[24px] p-5 sm:p-7 shadow-lg flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div>
+            <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block">Resumo do Pedido</span>
+            <div class="flex items-baseline gap-2 mt-1">
+              <span id="ps5-summary-price" class="text-3xl font-black text-white">R$ 125,00</span>
+              <span id="ps5-summary-period-label" class="text-xs text-blue-300 font-semibold">Fim de Semana</span>
+            </div>
+            <p class="text-[11px] text-slate-400 mt-1">
+              Sem burocracia. Contrato 100% digital via WhatsApp.
+            </p>
+          </div>
+
+          <button
+            id="btn-ps5-whatsapp"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-7 py-3.5 rounded-2xl shadow-lg hover:shadow-emerald-500/20 transition-all cursor-pointer text-sm sm:text-base active:scale-95 shrink-0"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+            <span>Reservar no WhatsApp</span>
+          </button>
+        </div>
+      </main>
+    </div>
+
+
+    <!-- ==================== MODALS ==================== -->
+
+    <!-- MODAL: Catálogo de Jogos PS5 -->
+    <div id="modal-games-catalog" class="fixed inset-0 bg-slate-950/60 backdrop-blur-xs z-50 hidden items-center justify-center p-4">
+      <div class="bg-white w-full max-w-2xl rounded-[28px] shadow-2xl overflow-hidden flex flex-col max-h-[90vh] animate-slideUp">
+        <!-- Header -->
+        <div class="p-5 sm:p-6 bg-[#0D3BFF] text-white flex items-center justify-between shrink-0">
+          <div>
+            <h3 class="text-lg sm:text-xl font-bold">Catálogo de Jogos PS5</h3>
+            <p class="text-xs text-blue-100 font-normal mt-0.5">Disponíveis para jogar durante o período de locação</p>
+          </div>
+          <button id="btn-close-games-modal" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          </button>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="p-4 border-b border-slate-100 bg-slate-50 shrink-0">
+          <div class="relative">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <input
+              type="text"
+              id="games-search-input"
+              placeholder="Buscar jogo por nome..."
+              class="w-full bg-white border border-slate-200 rounded-xl pl-10 pr-4 py-2.5 text-xs sm:text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-[#0D3BFF] focus:ring-2 focus:ring-blue-100 transition-all"
+            />
+          </div>
+        </div>
+
+        <!-- Scrollable Content -->
+        <div class="p-4 sm:p-6 overflow-y-auto space-y-3 flex-1" id="games-accordion-container">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Footer -->
+        <div class="p-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between shrink-0">
+          <span class="text-xs text-slate-500 font-medium">Outros títulos sob consulta</span>
+          <button id="btn-footer-close-games-modal" class="px-4 py-2 bg-slate-200 hover:bg-slate-300 text-slate-700 text-xs font-bold rounded-xl transition-colors cursor-pointer">
+            Fechar
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- MODAL: Bicicletas -->
+    <div id="modal-bikes" class="fixed inset-0 bg-slate-950/60 backdrop-blur-xs z-50 hidden items-center justify-center p-4">
+      <div class="bg-white w-full max-w-lg rounded-[28px] shadow-2xl overflow-hidden flex flex-col max-h-[90vh] animate-slideUp">
+        <!-- Header -->
+        <div class="p-5 sm:p-6 bg-[#8B5CF6] text-white flex items-center justify-between shrink-0">
+          <div>
+            <h3 class="text-lg sm:text-xl font-bold">Locação de Bicicleta</h3>
+            <p class="text-xs text-purple-100 font-normal mt-0.5">OGGI Hacker Sport Aro 29</p>
+          </div>
+          <button id="btn-close-bikes-modal" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          </button>
+        </div>
+
+        <!-- Content -->
+        <div class="p-5 sm:p-6 overflow-y-auto space-y-5 flex-1">
+          <!-- Select Plan -->
+          <div class="space-y-2">
+            <label class="text-xs font-bold text-slate-700 uppercase tracking-wider">Escolha o Período</label>
+            <div class="grid grid-cols-2 gap-3">
+              <div
+                id="bike-plan-daily"
+                class="bike-plan-card p-3.5 rounded-2xl border border-[#8B5CF6] bg-purple-50/70 ring-2 ring-[#8B5CF6]/20 shadow-xs transition-all cursor-pointer relative flex flex-col justify-between"
+              >
+                <div>
+                  <span class="text-[11px] font-bold text-slate-600 uppercase">Diária</span>
+                  <div class="text-xl font-black text-slate-900 mt-0.5">R$ 80</div>
+                  <span class="text-[10px] text-slate-500 font-medium">24 horas</span>
+                </div>
+              </div>
+
+              <div
+                id="bike-plan-weekend"
+                class="bike-plan-card p-3.5 rounded-2xl border border-slate-200 hover:border-slate-300 bg-white transition-all cursor-pointer relative flex flex-col justify-between"
+              >
+                <div>
+                  <span class="text-[11px] font-bold text-slate-600 uppercase">Fim de Semana</span>
+                  <div class="text-xl font-black text-slate-900 mt-0.5">R$ 190</div>
+                  <span class="text-[10px] text-slate-500 font-medium">Sexta a Segunda</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Date Selector -->
+          <div class="space-y-2">
+            <label class="text-xs font-bold text-slate-700 uppercase tracking-wider">Data de Retirada</label>
+            <button
+              id="btn-open-bike-datepicker"
+              class="w-full flex items-center justify-between p-3 rounded-xl border border-slate-200 hover:border-purple-300 bg-slate-50/50 hover:bg-purple-50/30 transition-all cursor-pointer text-left"
+            >
+              <div class="flex items-center gap-2.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-[#8B5CF6]"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                <span id="bike-receipt-date-display" class="font-bold text-slate-800 text-xs sm:text-sm">--/--/----</span>
+              </div>
+              <span class="text-xs font-bold text-[#8B5CF6] underline">Alterar</span>
+            </button>
+            <div class="text-[11px] text-slate-500 font-medium flex items-center justify-between">
+              <span>Devolução Prevista:</span>
+              <strong id="bike-return-date-display" class="text-slate-700">--/--/----</strong>
+            </div>
+          </div>
+
+          <!-- Accessories Checklist -->
+          <div class="space-y-2">
+            <label class="text-xs font-bold text-slate-700 uppercase tracking-wider">Acessórios Opcionais</label>
+            <div class="space-y-2 text-xs font-medium text-slate-700">
+              <label class="flex items-center justify-between p-3 rounded-xl border border-slate-200 bg-slate-50 hover:bg-slate-100 cursor-pointer">
+                <div class="flex items-center gap-2.5">
+                  <input type="checkbox" id="chk-helmet" class="w-4 h-4 rounded text-[#8B5CF6] focus:ring-purple-400" />
+                  <span>Capacete com Óculos</span>
+                </div>
+                <span class="font-bold text-purple-700">+R$ 10</span>
+              </label>
+
+              <label class="flex items-center justify-between p-3 rounded-xl border border-slate-200 bg-slate-50 hover:bg-slate-100 cursor-pointer">
+                <div class="flex items-center gap-2.5">
+                  <input type="checkbox" id="chk-bag" class="w-4 h-4 rounded text-[#8B5CF6] focus:ring-purple-400" />
+                  <span>Bolsa com Kit Remendo</span>
+                </div>
+                <span class="font-bold text-purple-700">+R$ 5</span>
+              </label>
+
+              <label class="flex items-center justify-between p-3 rounded-xl border border-slate-200 bg-slate-50 hover:bg-slate-100 cursor-pointer">
+                <div class="flex items-center gap-2.5">
+                  <input type="checkbox" id="chk-lights" class="w-4 h-4 rounded text-[#8B5CF6] focus:ring-purple-400" />
+                  <span>Luzes Dianteira e Traseira</span>
+                </div>
+                <span class="font-bold text-purple-700">+R$ 5</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Action -->
+        <div class="p-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between shrink-0">
+          <div>
+            <span class="text-[10px] text-slate-400 font-bold uppercase">Total Estimado</span>
+            <div id="bike-summary-price" class="text-xl font-black text-slate-900">R$ 80,00</div>
+          </div>
+          <button
+            id="btn-bike-whatsapp"
+            class="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-5 py-2.5 rounded-xl shadow-md transition-all cursor-pointer text-xs sm:text-sm active:scale-95"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+            <span>Reservar Bike</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- MODAL: DatePicker Calendar -->
+    <div id="modal-datepicker" class="fixed inset-0 bg-slate-950/60 backdrop-blur-xs z-50 hidden items-center justify-center p-4">
+      <div class="bg-white w-full max-w-sm rounded-[28px] shadow-2xl overflow-hidden flex flex-col animate-slideUp">
+        <!-- Calendar Header -->
+        <div class="p-4 bg-[#0D3BFF] text-white flex items-center justify-between">
+          <button id="btn-prev-month" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+          <span id="calendar-month-year-label" class="font-bold text-sm sm:text-base">Mês Ano</span>
+          <button id="btn-next-month" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="m9 18 6-6-6-6"/></svg>
+          </button>
+        </div>
+
+        <!-- Days of week headers -->
+        <div class="grid grid-cols-7 text-center text-[11px] font-bold text-slate-400 bg-slate-50 py-2 border-b border-slate-100">
+          <span>Dom</span><span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span>
+        </div>
+
+        <!-- Days Grid -->
+        <div class="p-3 grid grid-cols-7 gap-1 text-xs" id="calendar-days-grid">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Summary Preview -->
+        <div class="px-4 py-3 bg-blue-50/60 border-t border-slate-100 text-xs flex items-center justify-between text-slate-700">
+          <div>
+            <span class="block text-[10px] text-slate-400 font-bold uppercase">Recebimento</span>
+            <strong id="dp-preview-receipt" class="text-[#0D3BFF] font-bold">--/--/----</strong>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-slate-400"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          <div>
+            <span class="block text-[10px] text-slate-400 font-bold uppercase">Devolução</span>
+            <strong id="dp-preview-return" class="text-slate-800 font-bold">--/--/----</strong>
+          </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="p-3 bg-slate-50 border-t border-slate-100 flex items-center justify-end gap-2">
+          <button id="btn-cancel-datepicker" class="px-4 py-2 text-slate-500 hover:text-slate-800 text-xs font-bold transition-colors cursor-pointer">
+            Cancelar
+          </button>
+          <button id="btn-confirm-datepicker" class="px-5 py-2 bg-[#0D3BFF] hover:bg-blue-700 text-white text-xs font-bold rounded-xl transition-colors cursor-pointer shadow-xs">
+            Confirmar Data
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- MODAL: Termos de Uso -->
+    <div id="modal-terms" class="fixed inset-0 bg-slate-950/60 backdrop-blur-xs z-50 hidden items-center justify-center p-4">
+      <div class="bg-white w-full max-w-xl rounded-[28px] shadow-2xl overflow-hidden flex flex-col max-h-[85vh] animate-slideUp">
+        <!-- Header -->
+        <div class="p-5 sm:p-6 bg-slate-900 text-white flex items-center justify-between shrink-0">
+          <div>
+            <h3 class="text-lg sm:text-xl font-bold">Termos de Uso e Locação</h3>
+            <p class="text-xs text-slate-400 font-normal mt-0.5">VTMLoc. - Regras do Contrato</p>
+          </div>
+          <button id="btn-close-terms-modal" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          </button>
+        </div>
+
+        <!-- Content -->
+        <div class="p-5 sm:p-6 overflow-y-auto space-y-4 text-xs sm:text-sm text-slate-600 leading-relaxed flex-1">
+          <h4 class="font-bold text-slate-900 text-sm sm:text-base">1. Objeto e Responsabilidade</h4>
+          <p>
+            A VTMLoc oferece serviços de locação temporária de equipamentos eletrônicos (como consoles e acessórios) e itens esportivos (bicicletas). O locatário declara estar ciente do estado de conservação dos itens.
+          </p>
+
+          <h4 class="font-bold text-slate-900 text-sm sm:text-base">2. Entrega e Devolução</h4>
+          <p>
+            Os itens devem ser devolvidos no horário e data acordados no ato da reserva. Atrasos não notificados estão sujeitos a cobrança proporcional de diárias adicionais.
+          </p>
+
+          <h4 class="font-bold text-slate-900 text-sm sm:text-base">3. Cuidados com o Equipamento</h4>
+          <p>
+            É de responsabilidade do locatário a conservação do bem contra quedas, derramamento de líquidos, danos físicos ou mau uso durante todo o período vigente do contrato.
+          </p>
+
+          <h4 class="font-bold text-slate-900 text-sm sm:text-base">4. Identificação e Documentação</h4>
+          <p>
+            Para finalização do contrato digital, será solicitada foto de documento de identificação (RG/CPF ou CNH) e comprovante de residência atualizado.
+          </p>
+        </div>
+
+        <!-- Footer -->
+        <div class="p-4 bg-slate-50 border-t border-slate-100 flex items-center justify-end shrink-0">
+          <button id="btn-footer-close-terms" class="px-5 py-2.5 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-xl transition-colors cursor-pointer">
+            Entendido
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- MODAL: WhatsApp -->
+    <div id="modal-whatsapp" class="fixed inset-0 bg-slate-950/60 backdrop-blur-xs z-50 hidden items-center justify-center p-4">
+      <div class="bg-white w-full max-w-md rounded-[28px] shadow-2xl overflow-hidden flex flex-col animate-slideUp">
+        <!-- Header -->
+        <div class="p-5 sm:p-6 bg-[#25D366] text-white flex items-center justify-between shrink-0">
+          <div>
+            <h3 class="text-lg sm:text-xl font-bold">Atendimento WhatsApp</h3>
+            <p class="text-xs text-emerald-100 font-normal mt-0.5">VTMLoc. Suporte Direto</p>
+          </div>
+          <button id="btn-close-whatsapp-modal" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          </button>
+        </div>
+
+        <!-- Content -->
+        <div class="p-6 text-center space-y-4">
+          <div class="w-16 h-16 rounded-full bg-emerald-50 text-[#25D366] flex items-center justify-center mx-auto shadow-inner">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+          </div>
+          <div>
+            <h4 class="font-bold text-slate-900 text-base">Fale Conosco no WhatsApp</h4>
+            <p class="text-xs text-slate-500 mt-1">
+              Tire dúvidas, solicite orçamentos personalizados ou obtenha suporte rápido diretamente com a nossa equipe.
+            </p>
+          </div>
+
+          <a
+            href="https://wa.me/5593996589790?text=Ol%C3%A1,%20VTMLoc.!%20Gostaria%20de%20tirar%20uma%20d%C3%BAvida."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold w-full py-3.5 rounded-2xl shadow-lg transition-all cursor-pointer text-sm active:scale-95"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+            <span>Iniciar Conversa (93 99658-9790)</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./games-data.js"></script>
+    <script src="./app.js"></script>
   </body>
 </html>
-
