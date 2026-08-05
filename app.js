@@ -78,10 +78,10 @@
   // DOM Elements
   const homeView = document.getElementById('home-view');
   const ps5View = document.getElementById('ps5-view');
+  const bikeView = document.getElementById('bike-view');
 
   // Modals
   const modalGames = document.getElementById('modal-games-catalog');
-  const modalBikes = document.getElementById('modal-bikes');
   const modalDatepicker = document.getElementById('modal-datepicker');
   const modalTerms = document.getElementById('modal-terms');
   const modalWhatsapp = document.getElementById('modal-whatsapp');
@@ -105,9 +105,11 @@
     const receiptEl = document.getElementById('bike-receipt-date-display');
     const returnEl = document.getElementById('bike-return-date-display');
     const priceEl = document.getElementById('bike-summary-price');
+    const labelEl = document.getElementById('bike-summary-period-label');
 
     if (receiptEl) receiptEl.textContent = formatDate(bikeReceiptDate);
     if (returnEl) returnEl.textContent = formatDate(returnDate);
+    if (labelEl) labelEl.textContent = BIKE_LABELS[bikePlan];
 
     let total = BIKE_PRICES[bikePlan];
     if (bikeAccessories.helmet) total += BIKE_ACC_PRICES.helmet;
@@ -368,6 +370,8 @@
     // Nav / View Switching
     const btnOpenPs5 = document.getElementById('btn-open-ps5');
     const btnPs5Back = document.getElementById('btn-ps5-back');
+    const btnOpenBike = document.getElementById('btn-open-bike');
+    const btnBikeBack = document.getElementById('btn-bike-back');
 
     if (btnOpenPs5) {
       btnOpenPs5.addEventListener('click', () => {
@@ -391,13 +395,34 @@
       });
     }
 
+    if (btnOpenBike) {
+      btnOpenBike.addEventListener('click', () => {
+        if (homeView) homeView.classList.add('hidden');
+        if (bikeView) {
+          bikeView.classList.remove('hidden');
+          bikeView.classList.add('flex');
+        }
+        window.scrollTo(0,0);
+      });
+    }
+
+    if (btnBikeBack) {
+      btnBikeBack.addEventListener('click', () => {
+        if (bikeView) {
+          bikeView.classList.add('hidden');
+          bikeView.classList.remove('flex');
+        }
+        if (homeView) homeView.classList.remove('hidden');
+        window.scrollTo(0,0);
+      });
+    }
+
     // Open Modals
     const bindClick = (id, fn) => {
       const el = document.getElementById(id);
       if (el) el.addEventListener('click', fn);
     };
 
-    bindClick('btn-open-bike', () => showModal(modalBikes));
     bindClick('btn-open-terms', () => showModal(modalTerms));
     bindClick('btn-open-whatsapp', () => showModal(modalWhatsapp));
     bindClick('footer-link-terms', () => showModal(modalTerms));
@@ -406,7 +431,6 @@
     // Close Modals
     bindClick('btn-close-games-modal', () => hideModal(modalGames));
     bindClick('btn-footer-close-games-modal', () => hideModal(modalGames));
-    bindClick('btn-close-bikes-modal', () => hideModal(modalBikes));
     bindClick('btn-close-datepicker-modal', () => hideModal(modalDatepicker));
     bindClick('btn-cancel-datepicker', () => hideModal(modalDatepicker));
     bindClick('btn-close-terms-modal', () => hideModal(modalTerms));
@@ -448,7 +472,6 @@
 
     // DatePicker Openers
     bindClick('btn-open-ps5-datepicker', () => openDatePicker('ps5'));
-    bindClick('btn-open-[#0D3BFF]', () => openDatePicker('bike'));
     bindClick('btn-open-bike-datepicker', () => openDatePicker('bike'));
 
     // DatePicker Navigation
