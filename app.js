@@ -37,7 +37,7 @@
   };
 
   const BIKE_PRICES = {
-    daily: 80,
+    daily: 60,
     weekend: 190
   };
   const BIKE_DAYS = {
@@ -50,13 +50,13 @@
   };
 
   const BIKE_ACC_PRICES = {
-    helmet: 10,
-    bag: 5,
+    helmet: 5,
+    bag: 10,
     lights: 5
   };
   const BIKE_ACC_NAMES = {
-    helmet: 'Capacete com Óculos (+R$ 10)',
-    bag: 'Bolsa com Kit Remendo (+R$ 5)',
+    helmet: 'Capacete com Óculos (+R$ 5)',
+    bag: 'Bolsa de Selim com Kit Remendo (+R$ 10)',
     lights: 'Luzes Dianteira e Traseira (+R$ 5)'
   };
 
@@ -424,9 +424,7 @@
     };
 
     bindClick('btn-open-terms', () => showModal(modalTerms));
-    bindClick('btn-open-whatsapp', () => showModal(modalWhatsapp));
     bindClick('footer-link-terms', () => showModal(modalTerms));
-    bindClick('footer-link-whatsapp', () => showModal(modalWhatsapp));
 
     // Close Modals
     bindClick('btn-close-games-modal', () => hideModal(modalGames));
