@@ -7,154 +7,132 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,900;1,900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <style>
-    body {
-      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    }
-    .font-nimbus-heavy {
-      font-family: 'Archivo', -apple-system, BlinkMacSystemFont, sans-serif;
-      font-weight: 900;
-    }
-    .no-scrollbar::-webkit-scrollbar {
-      display: none;
-    }
-    .no-scrollbar {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-  </style>
+  <link rel="stylesheet" href="/style.css" />
 </head>
 <body class="bg-[#F8F9FA] text-slate-800 min-h-screen flex flex-col font-sans antialiased selection:bg-blue-100 selection:text-blue-700">
 
   <!-- ==================== HOME VIEW ==================== -->
   <div id="home-view" class="min-h-screen flex flex-col">
     <!-- Top Header Banner -->
-    <header class="bg-[#0A2ECC] text-white py-4 px-4 sm:px-8 border-b border-white/10 shadow-xs">
-      <div class="max-w-xl mx-auto text-center space-y-2">
-        <div class="text-3xl sm:text-4xl font-nimbus-heavy tracking-tight text-white">
+    <header class="w-full bg-[#0D3BFF] h-[170px] flex flex-col items-center justify-center text-center px-4 shadow-md relative overflow-hidden select-none">
+      <div class="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent pointer-events-none"></div>
+      
+      <div class="relative z-10 flex flex-col items-center justify-center">
+        <h1 class="text-[38px] sm:text-[44px] font-nimbus-heavy text-white tracking-tight leading-none">
           VTMLoc<span class="text-white">.</span>
-        </div>
-        <p class="text-xs sm:text-sm font-semibold text-blue-100 tracking-wide">
-          Locação Simples, Rápida e Segura
+        </h1>
+        
+        <p class="text-[11px] sm:text-[12px] font-medium text-white tracking-[0.2em] sm:tracking-[0.22em] uppercase mt-2.5 opacity-95">
+          LOCAÇÃO SIMPLES, RÁPIDA E SEGURA
         </p>
-        <div class="flex items-center justify-center gap-2 pt-1">
-          <span class="bg-white/10 text-white/90 text-[10px] font-bold px-2.5 py-1 rounded-full border border-white/15">
-            Entrega & Retirada
-          </span>
-          <span class="bg-white/10 text-white/90 text-[10px] font-bold px-2.5 py-1 rounded-full border border-white/15">
-            Contrato Digital
-          </span>
-        </div>
       </div>
     </header>
 
     <!-- Main Content Area -->
-    <main class="flex-1 flex flex-col items-center justify-between p-4 sm:p-6">
-      <div class="w-full max-w-xl space-y-4 my-auto">
-        
-        <!-- CARD 1: PS5 Slim -->
-        <div id="btn-open-ps5" class="bg-white rounded-[24px] p-5 border border-slate-100 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] hover:border-blue-300 hover:shadow-md transition-all cursor-pointer group active:scale-[0.99]">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center gap-3.5">
-              <div className="w-12 h-12 rounded-2xl bg-blue-50 text-[#0D3BFF] flex items-center justify-center shrink-0 group-hover:bg-[#0D3BFF] group-hover:text-white transition-colors">
-                <i data-lucide="gamepad-2" class="w-6 h-6"></i>
-              </div>
-              <div>
-                <h2 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#0D3BFF] transition-colors">
-                  PlayStation 5 Slim Digital
-                </h2>
-                <p class="text-xs text-slate-500 font-medium">
-                  Com 2 Controles DualSense
-                </p>
-              </div>
-            </div>
-            <div class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-blue-50 group-hover:text-[#0D3BFF] transition-colors">
-              <i data-lucide="chevron-right" class="w-5 h-5"></i>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 2: Bicicleta OGGI -->
-        <div id="btn-open-bike" class="bg-white rounded-[24px] p-5 border border-slate-100 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] hover:border-purple-300 hover:shadow-md transition-all cursor-pointer group active:scale-[0.99]">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center gap-3.5">
-              <div class="w-12 h-12 rounded-2xl bg-purple-50 text-[#8B5CF6] flex items-center justify-center shrink-0 group-hover:bg-[#8B5CF6] group-hover:text-white transition-colors">
-                <i data-lucide="bike" class="w-6 h-6"></i>
-              </div>
-              <div>
-                <h2 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#8B5CF6] transition-colors">
-                  Bicicleta
-                </h2>
-                <p class="text-xs text-slate-500 font-medium">
-                  OGGI Hacker Sport Aro 29
-                </p>
-              </div>
-            </div>
-            <div class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-purple-50 group-hover:text-[#8B5CF6] transition-colors">
-              <i data-lucide="chevron-right" class="w-5 h-5"></i>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 3: Termos de Uso -->
-        <div id="btn-open-terms" class="bg-white rounded-[24px] p-5 border border-slate-100 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] hover:border-slate-300 hover:shadow-md transition-all cursor-pointer group active:scale-[0.99]">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center gap-3.5">
-              <div class="w-12 h-12 rounded-2xl bg-slate-100 text-slate-700 flex items-center justify-center shrink-0 group-hover:bg-slate-800 group-hover:text-white transition-colors">
-                <i data-lucide="file-text" class="w-6 h-6"></i>
-              </div>
-              <div>
-                <h2 class="text-base sm:text-lg font-bold text-slate-900">
-                  Termos de Uso
-                </h2>
-                <p class="text-xs text-slate-500 font-medium">
-                  Regras e Contrato de Locação
-                </p>
-              </div>
-            </div>
-            <div class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-slate-200 group-hover:text-slate-800 transition-colors">
-              <i data-lucide="chevron-right" class="w-5 h-5"></i>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 4: WhatsApp -->
-        <div id="btn-open-whatsapp" class="bg-white rounded-[24px] p-5 border border-slate-100 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] hover:border-emerald-300 hover:shadow-md transition-all cursor-pointer group active:scale-[0.99]">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center gap-3.5">
-              <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-[#25D366] flex items-center justify-center shrink-0 group-hover:bg-[#25D366] group-hover:text-white transition-colors">
-                <i data-lucide="message-circle" class="w-6 h-6"></i>
-              </div>
-              <div>
-                <h2 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#25D366] transition-colors">
-                  Atendimento WhatsApp
-                </h2>
-                <p class="text-xs text-slate-500 font-medium">
-                  Fale com a gente direto no WhatsApp
-                </p>
-              </div>
-            </div>
-            <div class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-emerald-50 group-hover:text-[#25D366] transition-colors">
-              <i data-lucide="chevron-right" class="w-5 h-5"></i>
-            </div>
-          </div>
-        </div>
-
-        <!-- Footer Links -->
-        <footer class="pt-6 pb-4 text-center space-y-3">
-          <div class="flex items-center justify-center gap-4 text-xs font-semibold text-slate-500">
-            <button id="footer-link-terms" class="hover:text-blue-600 transition-colors cursor-pointer">Termos de Uso</button>
-            <span>•</span>
-            <button id="footer-link-whatsapp" class="hover:text-emerald-600 transition-colors cursor-pointer">Suporte</button>
-          </div>
-          <p class="text-[11px] text-slate-400 font-medium">
-            © VTMLoc. Todos os direitos reservados.
+    <main class="flex-1 flex flex-col items-center justify-between w-full max-w-[520px] mx-auto px-4 pt-8 sm:pt-10 pb-6">
+      <div class="w-full">
+        <!-- Section Header -->
+        <div class="text-center mb-6 sm:mb-8">
+          <h2 class="text-[20px] sm:text-[22px] font-bold text-slate-700 tracking-tight">
+            Escolha o que deseja alugar
+          </h2>
+          <p class="text-sm sm:text-[15px] text-slate-500 font-normal mt-1">
+            Encontre itens disponíveis de forma rápida.
           </p>
-        </footer>
+        </div>
 
+        <!-- Cards Container -->
+        <div class="space-y-4">
+          <!-- CARD 1: PS5 Slim -->
+          <button
+            id="btn-open-ps5"
+            class="w-full bg-white rounded-[20px] p-4 sm:p-5 border border-slate-100 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_25px_-2px_rgba(13,59,255,0.08)] hover:border-blue-100/80 transition-all duration-200 flex items-center justify-between gap-4 group cursor-pointer text-left active:scale-[0.99]"
+            aria-label="Alugar PlayStation 5"
+          >
+            <div class="flex items-center gap-4 min-w-0">
+              <div class="w-[52px] h-[52px] sm:w-[56px] sm:h-[56px] rounded-[16px] bg-[#EFF4FF] text-[#0D3BFF] flex items-center justify-center shrink-0 group-hover:bg-[#0D3BFF] group-hover:text-white transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 sm:w-7 sm:h-7"><line x1="6" x2="10" y1="12" y2="12"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="15" x2="15.01" y1="13" y2="13"/><line x1="18" x2="18.01" y1="11" y2="11"/><rect width="20" height="12" x="2" y="6" rx="6"/></svg>
+              </div>
+              <div class="min-w-0">
+                <h3 class="text-[16px] sm:text-[17px] font-bold text-slate-900 group-hover:text-[#0D3BFF] transition-colors leading-snug">
+                  PlayStation 5
+                </h3>
+                <p class="text-xs sm:text-[13.5px] text-slate-500 mt-0.5 truncate font-normal">
+                  Console PS5 Slim Digital + 2 Controles + Jogos.
+                </p>
+              </div>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 sm:w-5 sm:h-5 text-slate-300 group-hover:text-[#0D3BFF] group-hover:translate-x-0.5 transition-all shrink-0"><path d="m9 18 6-6-6-6"/></svg>
+          </button>
+
+          <!-- CARD 2: Bicicletas -->
+          <button
+            id="btn-open-bike"
+            class="w-full bg-white rounded-[20px] p-4 sm:p-5 border border-slate-100 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_25px_-2px_rgba(13,59,255,0.08)] hover:border-blue-100/80 transition-all duration-200 flex items-center justify-between gap-4 group cursor-pointer text-left active:scale-[0.99]"
+            aria-label="Alugar Bicicletas"
+          >
+            <div class="flex items-center gap-4 min-w-0">
+              <div class="w-[52px] h-[52px] sm:w-[56px] sm:h-[56px] rounded-[16px] bg-[#F5EFFF] text-[#8B5CF6] flex items-center justify-center shrink-0 group-hover:bg-[#8B5CF6] group-hover:text-white transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 sm:w-7 sm:h-7"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg>
+              </div>
+              <div class="min-w-0">
+                <h3 class="text-[16px] sm:text-[17px] font-bold text-slate-900 group-hover:text-[#8B5CF6] transition-colors leading-snug">
+                  Bicicletas
+                </h3>
+                <p class="text-xs sm:text-[13.5px] text-slate-500 mt-0.5 truncate font-normal">
+                  Locação por diária ou período.
+                </p>
+              </div>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 sm:w-5 sm:h-5 text-slate-300 group-hover:text-[#8B5CF6] group-hover:translate-x-0.5 transition-all shrink-0"><path d="m9 18 6-6-6-6"/></svg>
+          </button>
+
+          <!-- CARD 3: Em breve... (Disabled) -->
+          <div
+            class="w-full bg-[#F4F5F8]/70 rounded-[20px] p-4 sm:p-5 border border-dashed border-slate-200/90 flex items-center justify-between gap-4 select-none cursor-not-allowed text-left opacity-90"
+            aria-disabled="true"
+          >
+            <div class="flex items-center gap-4 min-w-0">
+              <div class="w-[52px] h-[52px] sm:w-[56px] sm:h-[56px] rounded-[16px] bg-[#E5E7EB]/80 text-slate-400 flex items-center justify-center shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 sm:w-7 sm:h-7"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+              </div>
+              <div class="min-w-0">
+                <h3 class="text-[16px] sm:text-[17px] font-bold text-slate-400 leading-snug">
+                  Em breve...
+                </h3>
+                <p class="text-xs sm:text-[13.5px] text-slate-400 mt-0.5 truncate font-normal">
+                  Novos itens serão adicionados.
+                </p>
+              </div>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 sm:w-4.5 sm:h-4.5 text-slate-300/90 shrink-0"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+        </div>
       </div>
+
+      <!-- Footer Links -->
+      <footer class="w-full max-w-[520px] mx-auto px-4 mt-8 sm:mt-10 mb-6 text-center flex flex-col items-center">
+        <button
+          id="btn-open-terms"
+          class="text-[12px] sm:text-[13px] font-bold text-[#0D3BFF] tracking-wider uppercase hover:underline focus:outline-none focus:ring-2 focus:ring-blue-300 rounded px-2 py-1 transition-all cursor-pointer"
+        >
+          TERMOS DE LOCAÇÃO
+        </button>
+
+        <div class="mt-3.5 text-xs sm:text-[13.5px] text-slate-500 font-normal">
+          Precisa de ajuda?{' '}
+          <button
+            id="btn-open-whatsapp"
+            class="text-slate-600 underline font-medium hover:text-[#0D3BFF] transition-colors focus:outline-none cursor-pointer"
+          >
+            Fale conosco pelo WhatsApp
+          </button>
+        </div>
+
+        <div class="mt-12 text-[11px] font-bold tracking-widest text-slate-300 uppercase select-none">
+          VTMLoc. © 2026
+        </div>
+      </footer>
     </main>
   </div>
 
@@ -164,7 +142,7 @@
     <!-- Navigation Top Bar -->
     <div class="bg-[#0A2ECC] text-white py-3 px-4 sm:px-8 border-b border-white/10 flex items-center justify-between shadow-xs sticky top-0 z-40 backdrop-blur-xs">
       <button id="btn-ps5-back" class="flex items-center gap-2 text-xs sm:text-sm font-bold bg-white/10 hover:bg-white/20 text-white px-3.5 py-1.5 rounded-xl transition-all cursor-pointer active:scale-95">
-        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
         <span>Voltar ao início</span>
       </button>
       <div class="text-sm font-nimbus-heavy text-white tracking-tight">
@@ -180,7 +158,7 @@
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6 relative z-10">
           <div class="space-y-2">
             <div class="inline-flex items-center gap-1.5 bg-white/15 text-white text-[11px] font-bold px-3 py-1 rounded-full backdrop-blur-xs">
-              <i data-lucide="gamepad-2" class="w-3.5 h-3.5"></i>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5"><line x1="6" x2="10" y1="12" y2="12"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="15" x2="15.01" y1="13" y2="13"/><line x1="18" x2="18.01" y1="11" y2="11"/><rect width="20" height="12" x="2" y="6" rx="6"/></svg>
               <span>Console Premium</span>
             </div>
             <h1 class="text-2xl sm:text-3xl font-black text-white tracking-tight">
@@ -244,7 +222,7 @@
           <div class="space-y-1 text-center sm:text-left">
             <div class="text-xs text-slate-500 font-medium">Data de Recebimento / Retirada:</div>
             <div class="text-sm sm:text-base font-bold text-slate-900 flex items-center justify-center sm:justify-start gap-2">
-              <i data-lucide="calendar" class="w-4 h-4 text-[#0D3BFF]"></i>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-[#0D3BFF]"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
               <span id="ps5-receipt-date-display">--/--/----</span>
             </div>
             <div class="text-xs text-blue-600 font-semibold pt-1">
@@ -253,7 +231,7 @@
           </div>
 
           <button id="btn-open-ps5-datepicker" class="bg-[#0D3BFF] hover:bg-blue-700 text-white font-bold text-xs sm:text-sm px-5 py-3 rounded-xl transition-all shadow-xs flex items-center gap-2 shrink-0 cursor-pointer active:scale-95">
-            <i data-lucide="calendar" class="w-4 h-4"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
             <span>Selecione o dia para receber</span>
           </button>
         </div>
@@ -274,7 +252,7 @@
         <div class="bg-gradient-to-br from-blue-50 to-indigo-50/50 border border-blue-200/80 rounded-2xl p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div class="flex items-center gap-3.5">
             <div class="w-10 h-10 rounded-xl bg-[#0D3BFF] text-white flex items-center justify-center shrink-0 shadow-xs">
-              <i data-lucide="download" class="w-5 h-5"></i>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
             </div>
             <div>
               <div class="font-bold text-slate-900 text-sm sm:text-base">
@@ -284,7 +262,7 @@
           </div>
 
           <button id="btn-open-games-modal" class="w-full sm:w-auto bg-[#0D3BFF] hover:bg-blue-700 text-white font-bold text-xs sm:text-sm px-5 py-3.5 rounded-xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 shrink-0 cursor-pointer active:scale-95">
-            <i data-lucide="sparkles" class="w-4 h-4 text-amber-300"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-amber-300"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
             <span>Confira os jogos inclusos</span>
           </button>
         </div>
@@ -292,7 +270,7 @@
 
       <!-- Info Notice -->
       <div class="bg-amber-50 border border-amber-200/80 rounded-2xl p-4 flex items-start gap-3 text-amber-900 text-xs">
-        <i data-lucide="info" class="w-4 h-4 text-amber-600 shrink-0 mt-0.5"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-amber-600 shrink-0 mt-0.5"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
         <div class="leading-relaxed">
           <strong>Reserva Direta no WhatsApp:</strong> Ao clicar no botão abaixo, suas informações de período e data serão enviadas diretamente para o nosso atendimento via WhatsApp.
         </div>
@@ -310,7 +288,7 @@
         </div>
 
         <button id="btn-ps5-whatsapp" class="w-full sm:w-auto bg-[#25D366] hover:bg-[#20bd5a] text-white py-3.5 px-6 rounded-2xl font-bold text-sm sm:text-base flex items-center justify-center gap-2.5 shadow-md hover:shadow-lg transition-all active:scale-95 cursor-pointer">
-          <i data-lucide="message-circle" class="w-5 h-5 fill-white text-transparent"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" class="w-5 h-5"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
           <span>Reservar no WhatsApp</span>
         </button>
       </div>
@@ -327,7 +305,7 @@
       <div class="bg-[#0D3BFF] text-white p-5 sm:p-6 flex items-center justify-between shrink-0">
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
-            <i data-lucide="gamepad-2" class="w-5 h-5 text-white"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-white"><line x1="6" x2="10" y1="12" y2="12"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="15" x2="15.01" y1="13" y2="13"/><line x1="18" x2="18.01" y1="11" y2="11"/><rect width="20" height="12" x="2" y="6" rx="6"/></svg>
           </div>
           <div>
             <h3 class="text-lg sm:text-xl font-bold leading-tight">Jogos Inclusos no PS5</h3>
@@ -337,7 +315,7 @@
           </div>
         </div>
         <button id="btn-close-games-modal" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors cursor-pointer">
-          <i data-lucide="x" class="w-5 h-5 text-white"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-white"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
         </button>
       </div>
 
@@ -345,7 +323,7 @@
       <div class="p-4 sm:p-6 overflow-y-auto space-y-4">
         <!-- Search bar -->
         <div class="relative">
-          <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
           <input
             id="games-search-input"
             type="text"
@@ -380,7 +358,7 @@
       <div class="bg-[#8B5CF6] text-white p-5 sm:p-6 flex items-center justify-between relative shrink-0">
         <div class="flex items-center gap-3">
           <div class="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center">
-            <i data-lucide="bike" class="w-6 h-6 text-white"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-white"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg>
           </div>
           <div>
             <h3 class="text-xl font-bold leading-tight">Alugar Bicicleta</h3>
@@ -388,7 +366,7 @@
           </div>
         </div>
         <button id="btn-close-bikes-modal" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors cursor-pointer">
-          <i data-lucide="x" class="w-5 h-5 text-white"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-white"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
         </button>
       </div>
 
@@ -398,7 +376,7 @@
         <div class="bg-purple-50/70 border border-purple-200/80 rounded-2xl p-4 flex items-center justify-between gap-3">
           <div class="flex items-center gap-3">
             <div class="w-10 h-10 rounded-xl bg-[#8B5CF6] text-white flex items-center justify-center shrink-0">
-              <i data-lucide="bike" class="w-5 h-5"></i>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg>
             </div>
             <div>
               <div class="text-xs font-bold text-purple-900 uppercase tracking-wider">
@@ -450,7 +428,7 @@
             <div class="space-y-1 text-center sm:text-left">
               <div class="text-xs text-slate-500 font-medium">Data de Recebimento:</div>
               <div class="text-xs sm:text-sm font-bold text-slate-900 flex items-center justify-center sm:justify-start gap-1.5">
-                <i data-lucide="calendar" class="w-4 h-4 text-[#8B5CF6]"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-[#8B5CF6]"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
                 <span id="bike-receipt-date-display">--/--/----</span>
               </div>
               <div class="text-[11px] text-purple-700 font-semibold pt-0.5">
@@ -459,7 +437,7 @@
             </div>
 
             <button id="btn-open-bike-datepicker" class="w-full sm:w-auto bg-[#8B5CF6] hover:bg-purple-700 text-white font-bold text-xs px-4 py-2.5 rounded-xl transition-all shadow-xs flex items-center justify-center gap-2 shrink-0 cursor-pointer active:scale-95">
-              <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
               <span>Selecionar Data</span>
             </button>
           </div>
@@ -499,7 +477,7 @@
 
         <!-- Safety Badge -->
         <div class="bg-purple-50 border border-purple-200/80 rounded-xl p-3 flex items-start gap-2.5 text-purple-900 text-xs">
-          <i data-lucide="shield-check" class="w-4 h-4 text-purple-600 shrink-0 mt-0.5"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-purple-600 shrink-0 mt-0.5"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
           <div>
             <strong>Revisão Garantida:</strong> A bicicleta passa por regulagem de freios e calibragem dos pneus antes de cada entrega.
           </div>
@@ -514,7 +492,7 @@
         </div>
 
         <button id="btn-bike-whatsapp" class="flex-1 max-w-[240px] bg-[#25D366] hover:bg-[#20bd5a] text-white py-3.5 px-4 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all active:scale-[0.98] cursor-pointer">
-          <i data-lucide="message-circle" class="w-4 h-4 fill-white text-transparent"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" class="w-4 h-4"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
           <span>Reservar no WhatsApp</span>
         </button>
       </div>
@@ -529,7 +507,7 @@
       <div class="bg-[#0D3BFF] text-white p-5 flex items-center justify-between shrink-0">
         <div class="flex items-center gap-3">
           <div class="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center">
-            <i data-lucide="calendar" class="w-5 h-5 text-white"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-white"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
           </div>
           <div>
             <h3 class="text-base sm:text-lg font-bold leading-tight">Selecione a Data de Recebimento</h3>
@@ -537,7 +515,7 @@
           </div>
         </div>
         <button id="btn-close-datepicker-modal" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors cursor-pointer">
-          <i data-lucide="x" class="w-5 h-5 text-white"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-white"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
         </button>
       </div>
 
@@ -546,11 +524,11 @@
         <!-- Month Navigation -->
         <div class="flex items-center justify-between text-slate-800 font-bold text-sm bg-slate-50 p-2.5 rounded-xl border border-slate-200/80">
           <button id="btn-prev-month" class="p-1 rounded-lg hover:bg-slate-200/80 text-slate-600 transition-colors cursor-pointer">
-            <i data-lucide="chevron-left" class="w-5 h-5"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="m15 18-6-6 6-6"/></svg>
           </button>
           <span id="calendar-month-year-label">Mês Ano</span>
           <button id="btn-next-month" class="p-1 rounded-lg hover:bg-slate-200/80 text-slate-600 transition-colors cursor-pointer">
-            <i data-lucide="chevron-right" class="w-5 h-5"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="m9 18 6-6-6-6"/></svg>
           </button>
         </div>
 
@@ -603,7 +581,7 @@
       <div class="bg-slate-900 text-white p-5 sm:p-6 flex items-center justify-between shrink-0">
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center">
-            <i data-lucide="file-text" class="w-5 h-5 text-white"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-white"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
           </div>
           <div>
             <h3 class="text-lg sm:text-xl font-bold leading-tight">Termos de Uso e Locação</h3>
@@ -611,7 +589,7 @@
           </div>
         </div>
         <button id="btn-close-terms-modal" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors cursor-pointer">
-          <i data-lucide="x" class="w-5 h-5 text-white"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-white"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
         </button>
       </div>
 
@@ -675,7 +653,7 @@
       <div class="bg-[#25D366] text-white p-5 sm:p-6 flex items-center justify-between shrink-0">
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center">
-            <i data-lucide="message-circle" class="w-6 h-6 text-white fill-white text-transparent"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" class="w-6 h-6"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
           </div>
           <div>
             <h3 class="text-lg font-bold leading-tight">Atendimento WhatsApp</h3>
@@ -683,7 +661,7 @@
           </div>
         </div>
         <button id="btn-close-whatsapp-modal" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors cursor-pointer">
-          <i data-lucide="x" class="w-5 h-5 text-white"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-white"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
         </button>
       </div>
 
@@ -715,13 +693,12 @@
           rel="noopener noreferrer"
           class="w-full bg-[#25D366] hover:bg-[#20bd5a] text-white py-3.5 px-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-md transition-all active:scale-95 cursor-pointer block text-center"
         >
-          <i data-lucide="message-circle" class="w-4 h-4 fill-white text-transparent inline"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" class="w-4 h-4 inline"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
           <span>Abrir conversa no WhatsApp</span>
         </a>
       </div>
     </div>
   </div>
-
 
   <!-- Load JS -->
   <script src="/games-data.js"></script>

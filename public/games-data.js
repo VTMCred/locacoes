@@ -1,4 +1,4 @@
-const GAME_CATALOG = [
+window.GAME_CATALOG = [
   {
     name: 'Ação / Aventura',
     emoji: '🗡️',
