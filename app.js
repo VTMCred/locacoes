@@ -9,11 +9,6 @@
   // Bike State
   let bikePlan = 'daily'; // 'daily', 'weekend'
   let bikeReceiptDate = new Date();
-  let bikeAccessories = {
-    helmet: false,
-    bag: false,
-    lights: false
-  };
 
   // DatePicker Internal State
   let dpCurrentDate = new Date();
@@ -32,13 +27,13 @@
   };
   const PS5_LABELS = {
     weekend: 'Fim de Semana',
-    week: 'Semana',
+    week: 'Dia de Semana',
     daily: 'Diária'
   };
 
   const BIKE_PRICES = {
-    daily: 60,
-    weekend: 150
+    daily: 85,
+    weekend: 160
   };
   const BIKE_DAYS = {
     daily: 1,
@@ -47,17 +42,6 @@
   const BIKE_LABELS = {
     daily: 'Diária',
     weekend: 'Fim de Semana'
-  };
-
-  const BIKE_ACC_PRICES = {
-    helmet: 5,
-    bag: 10,
-    lights: 5
-  };
-  const BIKE_ACC_NAMES = {
-    helmet: 'Capacete com Óculos (+R$ 5)',
-    bag: 'Bolsa de Selim com Kit Remendo (+R$ 10)',
-    lights: 'Luzes Dianteira e Traseira (+R$ 5)'
   };
 
   // Date Helper Functions
@@ -111,11 +95,7 @@
     if (returnEl) returnEl.textContent = formatDate(returnDate);
     if (labelEl) labelEl.textContent = BIKE_LABELS[bikePlan];
 
-    let total = BIKE_PRICES[bikePlan];
-    if (bikeAccessories.helmet) total += BIKE_ACC_PRICES.helmet;
-    if (bikeAccessories.bag) total += BIKE_ACC_PRICES.bag;
-    if (bikeAccessories.lights) total += BIKE_ACC_PRICES.lights;
-
+    const total = BIKE_PRICES[bikePlan];
     if (priceEl) priceEl.textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
   }
 
@@ -337,29 +317,13 @@
 
   function handleBikeWhatsapp() {
     const returnDate = addDays(bikeReceiptDate, BIKE_DAYS[bikePlan]);
-    
-    let total = BIKE_PRICES[bikePlan];
-    const accList = [];
-    if (bikeAccessories.helmet) {
-      total += BIKE_ACC_PRICES.helmet;
-      accList.push(BIKE_ACC_NAMES.helmet);
-    }
-    if (bikeAccessories.bag) {
-      total += BIKE_ACC_PRICES.bag;
-      accList.push(BIKE_ACC_NAMES.bag);
-    }
-    if (bikeAccessories.lights) {
-      total += BIKE_ACC_PRICES.lights;
-      accList.push(BIKE_ACC_NAMES.lights);
-    }
-
-    const priceStr = `R$ ${total.toFixed(2).replace('.', ',')}`;
-    const accText = accList.length > 0 ? `\n🛠️ *Acessórios:* ${accList.join(', ')}` : '';
+    const priceStr = `R$ ${BIKE_PRICES[bikePlan].toFixed(2).replace('.', ',')}`;
 
     const text = `Olá, VTMLoc.! Gostaria de alugar a *Bicicleta OGGI Hacker Sport Aro 29*.
-📌 *Plano:* ${BIKE_LABELS[bikePlan]} (Total: ${priceStr})
+📌 *Plano:* ${BIKE_LABELS[bikePlan]} (${priceStr})
 📅 *Recebimento:* ${formatDate(bikeReceiptDate)}
-📅 *Devolução:* ${formatDate(returnDate)}${accText}`;
+📅 *Devolução:* ${formatDate(returnDate)}
+🚲 *Incluso:* Capacete com óculos, Bolsa de selim com kit remendo e Luzes LED.`;
 
     const url = `https://wa.me/5593996589790?text=${encodeURIComponent(text)}`;
     window.open(url, '_blank');
@@ -443,30 +407,6 @@
     // Bike Plans
     bindClick('bike-plan-daily', () => selectBikePlan('daily'));
     bindClick('bike-plan-weekend', () => selectBikePlan('weekend'));
-
-    // Bike Accessories Checkboxes
-    const chkHelmet = document.getElementById('chk-helmet');
-    const chkBag = document.getElementById('chk-bag');
-    const chkLights = document.getElementById('chk-lights');
-
-    if (chkHelmet) {
-      chkHelmet.addEventListener('change', (e) => {
-        bikeAccessories.helmet = e.target.checked;
-        updateBikeDatesAndPriceDisplay();
-      });
-    }
-    if (chkBag) {
-      chkBag.addEventListener('change', (e) => {
-        bikeAccessories.bag = e.target.checked;
-        updateBikeDatesAndPriceDisplay();
-      });
-    }
-    if (chkLights) {
-      chkLights.addEventListener('change', (e) => {
-        bikeAccessories.lights = e.target.checked;
-        updateBikeDatesAndPriceDisplay();
-      });
-    }
 
     // DatePicker Openers
     bindClick('btn-open-ps5-datepicker', () => openDatePicker('ps5'));
